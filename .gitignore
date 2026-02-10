@@ -1,0 +1,8 @@
+# For mac
+.DS_Store
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Mi entorno virtual
+.env
