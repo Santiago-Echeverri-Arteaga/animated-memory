@@ -1,0 +1,295 @@
+% Cover letter using letter.cls
+%\documentclass[10pt]{iopart} % default is 10 pt
+\documentclass[onecolumn
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose, 
+%preprint,
+%preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,aps,
+pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+%floatfix,
+]{revtex4}
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\usepackage{graphicx}
+\newcommand{\meanv}[1]{\left< #1 \vphantom{\#1} \right>}
+\newcommand{\ket}[1]{\left| #1 \right>} % for Dirac bras
+\newcommand{\bra}[1]{\left< #1 \right|} % for Dirac kets
+\newcommand{\braket}[2]{\left< #1 \vphantom{#2} \right| \left. #2 \vphantom{#1} \right>} % for Dirac brackets
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} 
+\newcommand{\abs}[1]{\left| #1 \vphantom{#1} \right|} % for mean values
+\newcommand{\meanvop}[3]{\left< #1 \left| #2 \right| #3 \right>} % for mean values
+\newcommand{\Lindblad}[2]{\frac{#1}{2}\mathcal{L}_{#2}\left(\hat{\rho}\right)}
+\newcommand{\tr}{\mbox{tr}}
+%\usepackage{iopams} 
+%\usepackage[breaklinks=true,colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+%\newcommand{\angstrom}{\textup{\AA}}
+%\usepackage{color}
+%\definecolor{ROJO}{rgb}{1.0,0.0,0.0}
+%\definecolor{AZUL}{rgb}{0.0,0.0,1}
+%\usepackage{lineno}
+%\usepackage[USenglish]{babel}
+% the following commands control the margins:
+%\topmargin=-1in    % Make letterhead start about 1 inch from top of page
+%\textheight=8.5in  % text height can be bigger for a longer letter
+%\oddsidemargin=0pt % leftmargin is 1 inch
+%\textwidth=6.5in   % textwidth of 6.5in leaves 1 inch for right margin
+\usepackage{color}
+\definecolor{red}{rgb}{1.0,0.0,0.0}
+\definecolor{blue}{rgb}{0.0,0.0,1}
+\definecolor{green}{rgb}{0.29, 0.33, 0.13}
+\begin{document}
+\noindent
+NANOPH-2025-0379
+\\
+In the paper ``Coexistence of weak and strong light-matter coupling of a quantum dot in a photonic molecule'' 
+(NANOPH-2025-0379) by Lichtmannecker et al., the authors experimentally and theoretically investigate the 
+emission spectra from a photonic molecule (PM) composed of two photonic crystal nanocavities, one of which 
+couples to a single quantum dot. They experimentally observed an unexpected peak (W) between the bonding (B) 
+and antibonding (AB) modes of the PM under strong excitation conditions. They theoretically proposed a mechanism 
+in which the conditional phonon-assisted transitions play crucial roles. I believe that the results are surprising and 
+highly interesting for the quantum optics and solid-state cavity QED communities. However, I have several important 
+questions and concerns, particularly regarding the theoretical interpretation. I therefore believe that this work could 
+merit publication provided that the authors satisfactorily address my comments and questions below. If the authors 
+are able to do so, their paper will be of substantial value to the relevant research communities.
+%
+\bigskip
+\textbf{Comments and questions:}
+%
+\begin{enumerate}
+    \item In this work, the experimental observation of the unexpected peak (W) is theoretically discussed by the quantum 
+    master equation [Eqs.~(1) and (2)] based on the approach by Majumdar et al.~[65]. However, essential information 
+    required to follow the discussions and calculations is either missing or presented in a confusing order that reduces 
+    clarity, as detailed below:
+    %
+    \begin{enumerate}
+        \item[A)] In Eqs.~(3a) and (3b), the two Rabi splittings are expressed as functions of $g, \gamma_a, \gamma_b$ 
+        and $\gamma_\theta$ only, without dependence on $g_\sigma$ and $P_\sigma, P_\theta$, and $\gamma_\sigma$. 
+        Please clarify this is exact or an approximation. In general, one would expect the Rabi splitting to also depend 
+        on these variables. The authors should describe the approximations used and the applicable range. It would 
+        be helpful for readers if the derivation were shown, for example, in an Appendix or Supplementary Information. 
+        In addition, is the photon number inside the cavities truncated at unity?
+        \\
+\textbf{Response:} \\
+\textcolor{blue}{We thank the reviewer for raising this point. In particular, the Eqs.~(3a)–(3b) were obtained by analyzing the eigenvalue problem of the Liouvillian at the first excitation manifold. More precisely, by considering the one-photon transitions only. Within this approach, we consider $g_\sigma \approx 0$ in order to be consistent with the experimental conditions where $g_\sigma \ll g$. In particular, this approximation yields to compact expressions where the bonding/antibonding Rabi splitting depends only on parameters such as: $g, \gamma_a, \gamma_b,$ and $\gamma_\theta$, $P_\theta$, $P_\sigma$, $\gamma_s$. It can be confirmed by the following eigenvalues:
+%
+\begin{eqnarray}
+\lambda_1&=&i\omega_c-\frac{i}{4}\sqrt{16g^2-(\gamma_a-\gamma_b+\gamma_\theta)^2}-P_\sigma-\frac{\gamma_a+\gamma_b+\gamma_\theta}{4} \label{Autovalor_1}\\
+\lambda_2&=&i\omega_c+\frac{i}{4}\sqrt{16g^2-(\gamma_a-\gamma_b+\gamma_\theta)^2}-P_\sigma-\frac{\gamma_a+\gamma_b+\gamma_\theta}{4}\label{Autovalor_2}\\
+\lambda_3&=&i\omega_\sigma-\frac{P_\theta+P_\sigma+\gamma_s}{2},\label{Autovalor3}
+\end{eqnarray}
+%
+In the manuscript, we present these expressions in order to provide a transparent physical picture of the central emission peak $W$. Here $\lambda_{1}$ ($\lambda_{2}$) describes the bonding (antibonding) mode and the third eigenvalue $\lambda_3$ corresponds to a central photonic-like line whose frequency is set by the cavity and whose linewidth is strongly influenced by $P_\theta$. It is worth to mention that 
+in the manuscript we have omitted the third eigenvalue since it solely accounts for the QD-related emission line and it does not affect the bonding/antibonding Rabi splitting. The idea behind of these calculations is to get insights about why a central emission line emerges. Notice that all numerical calculations shown in the manuscript have been performed by solving rigorously the Lindblad master equation involving a large number of excitations manifolds and with $g_\sigma\neq 0$. 
+\\
+An increase in $\gamma_\theta$ causes the emission peaks connected to $\lambda_1$ and $\lambda_2$ to be broadened until $\gamma_\theta$ reaches the critical threshold $\gamma^c_\theta=4g+\gamma_b-\gamma_a$. At this critical point the Rabi splitting is lost. The emission of the coupled cavity system corresponds to a pure photonic mode at $\omega_c$. For $\gamma_\theta>\gamma^c_\theta$ the emission linked to $\lambda_2$ becomes narrowed and thus, the $W$ peak becomes optically resolvable. In Figures~\ref{figure}(a) and (b),
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{Response.pdf}
+    \caption{(a) Imaginary parts of the eigenvalues in the second excitation manifold, which determine the spectral positions of the emission peaks. 
+    The orange, black, and green curves correspond to the poles inherited from the first manifold (cf. Eqs.~(3a)–(3b)), while the red and blue curves denote additional poles from the second manifold. 
+    The vertical dashed line indicates the critical value $\gamma_\theta=\gamma_\theta^{c}$, where the square root in the first-manifold eigenvalues vanishes and the cavity splitting collapses. 
+    (b) Real parts of the same eigenvalues, showing the linewidths: the central peak $W$ is broad for small $\gamma_\theta$, but narrows as $\gamma_\theta$ increases, making it experimentally resolvable. 
+    (c) Emission spectrum calculated with the full master equation using the parameters of the manuscript (experimental regime), where $\gamma_\theta \ll P_\theta$ and $\omega_x \ll \omega_a=\omega_b$. 
+    In this case, the bonding/antibonding doublet ($B,AB$) coexists with the central peak $W$. 
+    (d) Emission spectrum for a hypothetical regime with $\gamma_\theta \gg P_\theta$ and $\omega_x \gg \omega_a=\omega_b$, illustrating how the phenomenology persists under extreme parameter conditions, with the central line $W$ becoming spectrally sharp and clearly separated from $B$ and $AB$.The parameters used here are $g = 14.0meV$,  $g_\sigma = 0.14meV$, $\gamma_a = 0.23meV$, $\gamma_b = 0.23meV$, $\gamma_s = 0.001meV$, $P_\sigma = 0.08meV$, $T = 13.0K$, (c) $P_\theta = 70.0meV$, $\gamma_\theta = 0.05meV$ (d) $P_\theta = 0.05meV$, $\gamma_\theta = 70.0meV$}
+    \label{figure}
+\end{figure}
+%
+ the imaginary and real components of the eigenvalues are shown for a truncation at two excitations and $g_\sigma\neq0$. The phenomenology associated to the first manifold remains. Moreover, there are two additional transitions that are independent of $\gamma_\theta$ and corresponds to the bonding and antibonding doublet. These transitios involves states with the q
+ QD in its excited state. In panel (b), the real parts of the eigenvalues further confirm the preservation of the initial pattern: the three distinct peaks observed optically consist of the bonding and antibonding modes (associated with transitions involving the excited quantum dot) and the $W$ peak, representing a purely photonic state at the cavity resonance. \\
+ We will include a clarification in the manuscript following Eqs.~(3a)–(3b), explicitly stating that these equations are obtained under the one-excitation approximation assumption with the condition $g_\sigma \ll g.$ Their purpose is to offer insights into the origin of the central peak.
+}
+\\
+\textcolor{blue}{\emph{Remark.} 
+Equations~(3a)–(3b) are derived from the Liouvillian in the first excitation manifold under the assumption $g_\sigma \approx 0$ since $g_\sigma \ll g$ in our experimental setup. }
+        %
+        \item[B)] In the right column on the same page as Eqs.~(3a) and (3b), the authors discuss the pumping dependence 
+        of the Rabi splitting. However, Eqs.~(3a) and (3b) do not include the variable $P_\sigma$ (the pumping rate). 
+        Instead, in their explanations (and in Fig.~8), $\gamma_\theta$ is treated either as the pumping rate itself or as 
+        a function of it. This causes confusion at this stage. The manuscript later states that ``the key variables $P_\sigma$ 
+        and $\gamma_\theta$ are expected to be interconnected, while in the model, they are independent free parameters 
+        [...]'', but this information is needed earlier, before the discussion of the physical phenomena. At the same time, 
+        the criteria and procedure for determining their values should be clarified.
+        \\
+ \textcolor{blue}{\textbf{Response:} 
+ \\
+ We thank the reviewer for raising this point. The phonons that enter our model through the rate $\gamma_\theta$ do not correspond to thermal lattice phonons, but rather to phonon-assisted transfer processes that compensate the momentum mismatch between the cavity photons and the excitons. Since the exciton acquires an effective mass in the crystalline environment, the exchange of crystal phonons enables this transfer, which is the well-established mechanism of phonon-assisted cavity feeding~\cite{Majumdar, VillasBoas}. From this perspective, it is natural to expect an intrinsic connection between the incoherent exciton pumping $P_\sigma$ and the phonon-assisted transfer rate $\gamma_\theta$, as both involve the same phonon reservoir. However, in the present work we have treated them as independent parameters for the sake of clarity and in order to match the experimental conditions.
+ }
+        \item[C)] Are the calculated spectra in Figs.~8 and 9 obtained solely from cavity $b$? In other words, are they 
+        calculated from the correlation function of the operators $b$ and $b^\dagger$? The manuscript later states that 
+        ``For instance, the cavity emission was taken here to be that of cavity $b$ [...].'' If this is indeed the case, please 
+        make this point explicit in the explanations of Figs.~8 and 9.
+    \end{enumerate}
+\textcolor{blue}{Response: 
+Taking into account the reviewer comment about the sentence "For instance, the cavity emission was taken here to be that of cavity $b$ [...].". We suggest to add information about how was computed the emission spectrum from a theoretical point of view. The text should be corrected by adding the following ideas: 
+%
+When light resonantly excites a PM system, one of the key measurements is the system's emission spectrum. Theoretically, this is considered a stationary process, which can be determined using the Wiener-Khintchine theorem. According to this theorem, the emission spectrum is obtained from the Fourier Transform of the correlation function, specifically the two-time expectation value, of the operator fields $a$ and $b$ as follows:
+%
+\begin{equation}
+    s(\omega)=\frac{1}{\pi\meanv{\hat{a}^\dagger\hat{a}}}\int_{-\infty}^\infty\meanv{\hat{a}^\dagger(t+\tau)\hat{a}(t)}e^{-i\omega \tau}+\frac{1}{\pi\meanv{\hat{b}^\dagger\hat{b}}}\int_{-\infty}^\infty\meanv{\hat{b}^\dagger(t+\tau)\hat{b}(t)}e^{-i\omega \tau}
+\end{equation}
+}
+    \item To the best of my understanding, in the last two terms of Eq.~(2), $\gamma_\theta$ and $P_\theta$ are the 
+    phonon-mediated transition rates determined by the phonon sideband of the quantum dot (QD). Therefore, 
+    $\gamma_\theta$ and $P_\theta$ strongly depend on the temperature and the cavity detuning from the QD but in 
+    principle should not depend on the pumping rate $P_\sigma$. However, in their explanations, $\gamma_\theta$ is 
+    described as increasing (decreasing) with increasing (decreasing) $P_\sigma$, which means that $\gamma_\theta$ has a 
+    strong dependence on $P_\sigma$. The authors should comment on possible mechanisms that could plausibly relate 
+    $\gamma_\theta$ to $P_\sigma$ although I understand that Eqs.~(1) and (2) are intended as a simple phenomenological 
+    model to capture the underlying physics. This is my major concern in believing the scenario proposed by the authors. 
+    Do the authors mean that $P_\sigma$ effectively changes the temperature in the real experiments?
+    \\\\
+\textcolor{blue}{We thank the reviewer for raising this important point. We want to clarify to the reviewer that from a theoretical point of view, the standard microscopic description (within the Lindblad master equation approach) of the phonon-mediated coupling rates depends explicitly on properties of the phonon bath. More precisely, the spectral density of lattice vibrations, the temperature as well as of the detuning between the QD and the PhC cavity. In this framework, the rates $\gamma_{\theta}$ ($P_{\theta}$) do not contain any direct dependence on the incoherent pump strength $P_{\sigma}$ as it has been shown recently~\cite{VillasBoas}. In fact, the authors explain successfully the emission spectrum and photon auto- and cross-correlation results of experimental observations on QDs in cavities. However, in the present experimental setup, it could be possible to have apparent interdependence between $\gamma_{\theta}$ ($P_{\theta}$) on $P_{\sigma}$ as is mentioned in the manuscript and it should therefore be understood as an effective rather than a fundamental dependence. There are several physical mechanisms that can plausibly connect $P_{\sigma}$ to the observed phonon-mediated coupling rates. For example, the local heating which is associated to the optical pumping that deposits energy in the host material, which can locally raise the temperature of the lattice. Since the number of thermal phonons grows with temperature, this effect naturally enhances phonon-assisted transfer. The non-equilibrium phonon populations as a consequence of strong or pulsed pumping, here the phonon bath may deviate from thermal equilibrium, creating an excess of vibrational excitations that also contribute to the effective rates. Additionally, it is possible that carriers generated in surrounding regions by the pump can modify the exciton--phonon coupling through screening or strain effects, effectively altering how the QD interacts with the lattice vibrations. The spectral diffusion can enhance charge fluctuations in the environment of the QD, leading to a distribution of detunings. Because phonon-assisted transfer is very sensitive to detuning, averaging over this fluctuating environment can mimic a pump-dependent rate. Also saturation effects even if the microscopic phonon-mediated coupling rate is unchanged, the way it appears in population dynamics and in the observables we measure can depend on how strongly the QD is pumped, especially once the system approaches saturation. In light of these possibilities, we have revised the text to clarify that the pump does not directly change the fundamental phonon-mediated coupling  rates, but rather modifies the effective environment in which the QD and cavity interact. For simplicity in our theoretical model we treat these effective rates as parameters that can vary independent from pump power.}
+    \\\\
+    %
+    \item As described in the above comment 2, $\gamma_\theta$ and $P_\theta$ strongly depend on the temperature. 
+    How is this temperature dependence incorporated into the calculations of Fig.~9?
+    \\
+\textcolor{blue}{Response:
+Taking into account the previous response to the reviewer, we want to clarify how the temperature is included in the numerical simulations, particularly for Fig. 9 in the manuscript. The thermal dependence has been incorporated through the refractive index in QD-embedded PhC cavities, as described by Blakemore \cite{Blakemore:1982}, and the Varshni model \cite{Varshni:1967, Vurgaftman:2001}. Specifically, the frequency $\omega_{\sigma}(T) = E_g(0) - \alpha T^2/(T+\beta)$, where $E_g$ represents the gap energy of the material in which the QD is grown, and $\alpha$ and $\beta$ are material-dependent constants. Additionally, the cavity frequency $\omega_a(T)=\omega_a(0)/(1+a'T)$, with $a'$ being a constant dependent on the materials constituting the cavity --similarly for $\omega_{b}(T)$--. In principle, the phonon-assisted rates $\gamma_{\theta}$ and $P_{\theta}$  depend on temperature, detuning and the spectral density as can be demonstrated by considering the microscopic description within the Lindblad master equation approach. In fact, the phonon-assisted rates evidences a thermal dependence like an S-shape, as it has shown in works explaining the mode pulling phenomenon in cQED~\cite{ModePulling,Biexciton}. While we acknowledge the thermal dependence of phonon-assisted rates, in this study, we have treated it as a constant to maintain the simplicity of our theoretical model. We recognize that incorporating this aspect of thermal dependence could further enhance the refinement of the proposed model.   
+}
+    \item As described in the above comment 2, $\gamma_\theta$ and $P_\theta$ strongly depend on the cavity detuning 
+    from the QD. In particular, to achieve $\gamma_\theta \gg P_\theta$, is it essential that the QD resonance $\omega_\sigma$ 
+    be negatively detuned from the bare cavity resonance (i.e.~$\omega_\sigma < \omega_a = \omega_b$)? I would expect 
+    $\gamma_\theta \ll P_\theta$ if the QD resonance were positively detuned from the bare cavity resonance 
+    (i.e.~$\omega_\sigma > \omega_a = \omega_b$), which would result in the absence of the peak (W). If this is the case, 
+    experimental verification of this point would considerably strengthen the case for phonon involvement.\\
+\textcolor{blue}{\textbf{Response}
+As correctly noted by the reviewer and also discussed by other authors in the literature~\cite{Majumdar, VillasBoas}, $\gamma_\theta$ and $P_\theta$ strongly depend on the detuning, and a negative detuning is indeed required to achieve $\gamma_\theta \gg P_\theta$ -- the only condition under which the central peak $W$ can arise --. This is confirmed in panel~(c) of Fig.~1, which shows the emission spectrum under the experimental condition $\omega_x \simeq 1298.8\,\text{meV} \ll \omega_a$, where the central peak $W$ clearly emerges and coexists with the bonding ($B$) and antibonding ($AB$) modes. In contrast, panel~(d) illustrates the case $\omega_x = 1323\,\text{meV} \gg \omega_a$, where $\gamma_\theta \ll P_\theta$. In this regime, the central emission peak $W$ disappears, and only the $B$ and $AB$ modes remain visible.
+}
+    \item The authors claim, based on the temperature-dependent and time-resolved measurements, that the unexpected 
+    peak (W) is of photonic origin. I agree with this conclusion. However, the linewidth of the peak W is very different 
+    from those of the B and AB lines, which are also of photonic origin. Could the authors clarify what theoretically 
+    determines the linewidth of the peak W?\\
+    \textcolor{blue}{\textcolor{blue}{\textbf{Response:} \\The subspace of one-photon optical transitions of the Liouvillian allows us to analyze, through its eigenvalues, the spectral positions of the emission peaks (given by the imaginary parts) and their linewidths (given by the real parts). In the first excitation manifold it is possible, as shown in the manuscript and reiterated above, to obtain compact analytic expressions for these quantities (assuming $\omega_a=\omega_b=\omega_c$):\begin{eqnarray}\lambda_1&=&i\omega_c-\frac{i}{4}\sqrt{16g^2-(\gamma_a-\gamma_b+\gamma_\theta)^2}-P_\sigma-\frac{\gamma_a+\gamma_b+\gamma_\theta}{4}, \label{Autovalor_1}\\\lambda_2&=&i\omega_c+\frac{i}{4}\sqrt{16g^2-(\gamma_a-\gamma_b+\gamma_\theta)^2}-P_\sigma-\frac{\gamma_a+\gamma_b+\gamma_\theta}{4}, \label{Autovalor_2}\\\lambda_3&=&i\omega_\sigma-\frac{P_\theta+P_\sigma+\gamma_s}{2}. \label{Autovalor3}\end{eqnarray}From these expressions it follows that, once $\gamma_\theta$ reaches the critical value $\gamma^c_\theta = 4g+\gamma_b-\gamma_a$, the emission collapses to the bare cavity frequency $\omega_c$. The linewidth of this central peak, which initially broadens as $\gamma_\theta$ increases from the bonding ($B$) and antibonding ($AB$) frequencies, grows linearly until $\gamma^c_\theta$ and then rapidly decreases beyond this point. In the second excitation manifold, all optical transitions involving the QD in its excited state $|X\rangle$ remain unaffected by $\gamma_\theta$; these are responsible for the bonding and antibonding peaks $B$ and $AB$, whose linewidths and spectral positions are completely insensitive to $\gamma_\theta$. By contrast, the transitions where the QD is in its ground state $|G\rangle$ give rise to emission at the bare cavity frequency, with a linewidth that depends nonlinearly on $\gamma_\theta$. This behavior is illustrated in Fig.~\ref{figure}(a) and (b), where the eigenvalues are plotted up to the second excitation manifold, and a dashed guide line marks the critical value $\gamma^c_\theta$. The phenomenology is in excellent agreement with previous reports for the case of a single cavity coupled to a QD~\cite{PRA}, where the term $\gamma_\theta$ induces a dynamical phase transition of the system, restructuring the Hilbert space and giving rise to the coexistence of the strong-coupling Rabi doublet with a central collective emission peak corresponding to a purely photonic cavity mode.}
+    }
+    \item As far as I understand, the conditional phonon-assisted transfers of excitation stochastically determine the coupling regime (strong vs.~weak) of the photonic molecule. Therefore, the subject under discussion concerns the 
+    coupling between the two cavity modes, not the light--matter coupling. If this is correct, the title ``Coexistence 
+    of weak and strong light-matter coupling of a quantum dot in a photonic molecule'' is misleading, as it gives the 
+    impression of a coexistence of weak and strong light--matter coupling. In addition, the title should include the 
+    term ``phonon,'' since the authors claim that the phonon-assisted process plays a key role.
+    \\\\
+    \textcolor{blue}{Response: Taking into account the reviewer comment about the title of the manuscript, we propose to consider the following title as  ``Phonon-Mediated Coupling Enabling the Coexistence of Weak and Strong Regimes in a Quantum-Dot Photonic Molecule". It is important to recognize our results refers to the emergence of two well-defined quantum regimes for the photonic molecule which is assisted by phononic processes.}
+%
+    \item I also noticed the following typos, which the authors may wish to correct:
+    \begin{enumerate}
+        \item Captions of Figs.~8 and 9: $g_{JC} \to g_\sigma$.
+        \item Horizontal axis of Fig.~10(b): $P_s \to P_\sigma$.
+    \end{enumerate}
+\end{enumerate}
+\textcolor{blue}{Response: Since we don't have the .tex file, our recommendation is to correct the typos pointed out by the reviewer. We corrected the x-axis for  figure 10 as mentioned the reviewer.
+}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=1.2]{Figure_10new.pdf}
+\end{center}
+\end{figure}
+%%
+\\
+\textbf{Reviewer: 2}
+\\
+\textbf{Comments to the Author} \\
+The authors report a combined experimental and theoretical study of a photonic crystal molecule. At high excitation power, in addition to the expected bonding and antibonding ``normal'' modes, they observe an unexpected photonic-like emission peak (labeled W) located midway between the two hybridized modes. The feature shows power-dependent emergence and lifetimes comparable to cavity modes, suggesting that the nonlinearity is photonic in nature. To interpret this, the authors develop a phenomenological quantum-optical model where the quantum dot mediates correlated phonon-assisted transitions, leading to a situation where weak- and strong-coupling ``coexist''. Their minimal model reproduces the appearance of the additional peak.
+%
+In my opinion, the paper will be suitable for publication in \textit{Nanophotonics} after successfully the comments below are addressed. The main concerning points are: 
+(1) the proposed mechanism that gives rise to the anomalous peak remains somewhat obscure, 
+(2) it is not clear why the current setup and experimental observations are evidence of a ``new regime'' of light-matter interaction.
+%
+\textbf{Comments to be addressed:}
+\begin{enumerate}
+    \item While detailed fit is not necessary, can the authors provide a brief discussion of parameter ranges and robustness of the kinetic model?
+    \\\\
+\textcolor{blue}{Taking into account the reviewer comment about the relevant parameter ranges and the robustness of our model. In general, the chosen values for the cavity decay rates ($\gamma_a, \gamma_b$), emitter decay and pump rates ($\gamma_\sigma, P_\sigma$) and coupling strengths ($g, g_\sigma$) lie within the experimentally accessible ranges reported in semiconductor cavity--QED systems. In particular, we also verified that the qualitative features of the dynamics (e.g., coexistence of weak and strong coupling, phonon-assisted processes) are preserved under moderate variations of these parameters. This confirms that our conclusions are robust and do not rely on fine-tuned parameter choices. It is worth to mention that the phonon-mediated coupling mechanism together with the Jaynes-Cummings model has been used for explaining successfully different phenomena in cQED systems~\cite{PRA,ModePulling,VillasBoas,Biexciton}. In particular, we have chosen the typical experimental parameters when is possible for the numerical simulations.
+}
+    \\\\
+    \item In the discussion of the anomalous central peak, I found the explanation somewhat hard to follow. If I understand correctly, authors explain that, using strong pumping, the quantum dot can be controlled such that its interaction with the photonic molecule preserves the delocalization (coherence) or localizes the photon. If this is indeed the intended picture, I would kindly suggest that the manuscript make this point more explicitly. At present, the description is somewhat confusing, partly because it is written before the theoretical model is shown, but also because of the way it is written (see page 2 ``We explain this unexpected feature as a zero-dimensional counterpart
+    $\dots$''). A clearer explanation of the interpretation would greatly improve the manuscript.
+    \\\\
+    \textcolor{red}{Dear Stefan, in our opinion, the reviewer is right and the paragraph should be rewritten in a such a way that explain how the anomalous peak emerges in a better form}
+    \\\\
+    \item Perhaps an alternative explanation for the anomalous peak at high pump powers goes as follows: high pump powers effectively cause inhomogeneous broadening of each of the cavity modes. Hence, the molecule can no longer be modelled as a two-level system but as two homogeneously or inhomogeneously broadened cavity modes. When the broadening is comparable with the coupling between the photon modes, the PM will exhibit the bonding, antibonding and a broad central peak. Does this describe the same phenomenon that is discussed in the manuscript?
+\\\\
+\textcolor{blue}{Response: Taking into account the ideas mentioned by the reviewer, we want to clarify that the situation outlined, where intense pump powers lead to the uneven broadening of cavity modes, resulting in a broad central peak alongside bonding and antibonding resonances, differs from the phenomenon we describe in Eq.~(2). In our case, the terms $P_{\theta}$ and $\gamma_{\theta}$ represent incoherent transfer processes mediated by phonons between the quantum dot and the cavity, which become significant under detuning conditions. These terms stem from the interaction between the electronic excitation and lattice vibrations and are distinct from a static broadening of cavity modes. 
+Nevertheless, both scenarios can exhibit similar spectral features at high pump powers. Intense pumping can heighten dephasing and spectral diffusion, broadening cavity lines and diminishing the visibility of bonding and antibonding peaks. This may resemble the "feeding" processes introduced through phonon-assisted Lindblad terms. Our model is intentionally concise and conceptual, capturing the pivotal role of the quantum dot-phonon interaction in feeding the cavity mode without explicitly introducing an extra broadening mechanism.
+To summarize, the two explanations are not identical: the phonon-mediated perspective underscores the lattice reservoir's function in facilitating incoherent excitation transfer, while the inhomogeneous broadening perspective spotlights pump-induced adjustments of cavity linewidths. These effects can co-occur in practical samples under intense pump power. Therefore, we specify in the manuscript that while our model explicitly addresses phonon-mediated transfer, pump-induced cavity broadening might contribute to the observed spectral characteristics.
+}
+\\
+% 
+    \item The terminology ``new regime of light-matter interaction'' should be clarified. The manuscript would benefit from explaining in what sense the coexistence of weak and strong coupling differs from what occurs in other systems with strongly coupled photonic modes or even polaritons (matter excitations strongly coupled to photons). In these systems strong and weak coupling effects coexist as well given a source of broadening. Is the main difference the non-linear character of the broadening?
+    \\\\
+\textcolor{blue}{We thank to the reviewer by pointing out this important aspect for clarity of the readers. 
+We have added to the manuscript the following text: "The coexistence of weak and strong coupling observed here is not simply the result of conventional broadening mechanisms, as is well-known in the literature. In typical polariton systems, homogeneous or inhomogeneous broadening leads to a partial loss of coherence, and the coexistence of weak and strong coupling arises as a static consequence of spectral overlap. In contrast, in our system, the coexistence originates from phonon-mediated coupling processes, which is fundamentally a different mechanism. More precisely, the phonon-mediated coupling corresponds to processes in which the QD transfers excitation to the cavity with the help of phonons. These processes open an additional incoherent pump-dependent channel of interaction between the QD and PhC cavity. As a result, the system exhibits coherent bonding/antibonding polaritons together with a central peak that is photonic in origin but incoherent in character because it arises from phonon-mediated energy exchange rather than coherent hybridization. The nonlinear, dynamical nature of this phonon-assisted broadening is therefore what we refer to as a "new regime of light--matter interaction."
+\\\\
+\textcolor{red}{Since we do not have the latex file, we recommend placing the text in the appropriate place where the term "new regime of light-matter interaction" is referenced.}
+}
+    \\\\
+    \item There are some typos: on page 3 ``caviy axis'' instead of ``cavity axis''; on page 4 ``smaler'' instead of ``smaller''; on page 7 ``denties'' instead of ``densities''. There may be more.
+    \\\\
+    \textcolor{red}{Response: Since we do not have the latex file, our recommendation is to correct the typos pointed out by the reviewer.}
+%
+\end{enumerate}
+%
+\bigskip
+\textbf{Reviewer: 3}
+%
+\textbf{Comments to the Author} \\
+The authors study a system comprised of two coupled photonic crystal resonators that form a photonic molecule (comprised of two hybridized Bonding (B) and anti-bonding (AB) modes). This photonic molecule is further coupled to a quantum dot. In addition to the symmetrically split Rabi peaks that one would expect in this coupled system, they observe one additional peak at energies between the lower and higher energy peaks. Through theoretical modeling, they infer that this third peak results from circumstances where the state of the quantum dot either enables or prohibits strong coupling, which depends on the coupling energy exchange rate relative to the dissipation rate. The state of the quantum dot is operative in determining the dissipation rate of the coupled system, thus they observe a system where strong and weak coupling can co-exist because of the probabilistic nature of the QD states.
+\\
+This is an interesting result that should ultimately be publishable. I am left with one lingering confusion about their theoretical model that I would like for the authors to address before publication.
+\\
+In the description of their physical system, the authors clearly indicate that the two photonic crystal cavities are strongly coupled together to give the photonic molecule structure, which has hybrid modes (B and AB). In their theoretical model, they couple their QD to one PhC cavity mode only. It is my opinion that if the PhCs are in fact strongly coupled, then it is not really correct to write down the coupling as only arising from the states of the QD and the states of a single PhC mode; the coupling should really be represented in the tripartite space of both PhCs and the QD that has a direct mapping to the Hilbert space of the photonic molecule and the quantum dot.
+\\
+Besides this point, I think a few minor revisions to the description of the theoretical model would greatly enhance the clarity.
+\\\\
+\textcolor{blue}{We want to clarify to the reviewer that from an experimental point of view, both PhC cavities have been fabricated in a such way that they are in strong coupling as is described in the manuscript. Further, the QD is spatially coupled to one of the two cavities forming the photonic molecule. These experimental conditions have been considered in our theoretical model (see Eq.(1) in the manuscript). In the numerical simulations, we have considered the tripartite space involving each of the Hilbert space: two for PhC cavities and one for the QD. Therefore, we guaranties convergence in the solution to the Lindblad master equation as well as in all numerical calculations involved in the manuscript. 
+}
+%
+\begin{enumerate}
+    \item A table summarizing all Hamiltonian and Lindbladian parameters would be very helpful.
+    \item A brief description of the physical interpretation of Lindbladian terms just after Eq.~(2) would also be helpful.7
+    \\\\
+    \textcolor{red}{Dear Stefan, we don't think it's relevant to include the table (you can find it at the end of this document) that mentions the article review. However, we've created one so you can adjust it to what you consider relevant in your response.}
+\\\\
+\textcolor{blue}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Taking into account the reviewer comment about the description of each terms that appears in Eq. (2). We recommend to add comments about the dissipative processes and rewrite the text including properly the following sentences: 
+\begin{itemize} 
+The terms $\gamma_a \mathcal{L}_a$ and $\gamma_b \mathcal{L}_b$) denote the radiative leakage of photons from cavities $a$ and $b$, occurring at rates $\gamma_a$ and $\gamma_b$, respectively. The terms $\gamma_\sigma \mathcal{L}_\sigma$  are associated to process that involve the irreversible decay of the QD population into non-cavity radiation modes. It serves as the primary decoherence channel for the isolated emitter. The term $P_\sigma \mathcal{L}_{\sigma^\dagger}$ describes the incoherent driving through non-resonant optical excitation. Finally, the term associated to the phonon-assisted pumping $P_\theta \mathcal{L}_{\sigma a^\dagger}$ describes a phonon-mediated process in which an exciton is generated in the QD while a photon is simultaneously injected into cavity $a$, providing an effective mechanism for correlated pumping. Conversely, the term associated to the phonon-mediated decay $\gamma_\theta \mathcal{L}_{\sigma^\dagger a}$ corresponds to the annihilation of a cavity photon accompanied by the creation of a QD exciton, mediated by a phonon sideband. This incoherent exchange of excitation is a distinctive feature of solid-state cavity quantum electrodynamics (QED) and has been identified as a key mechanism underlying cavity feeding effects (Please cite these works here:
+\\\\
+\begin{thebibliography}{99}
+    \bibitem{PRA} S. Echeverri-Arteaga, H Vinck-Posada, E. A. Gómez, \textit{Explanation of the quantum phenomenon of off-resonant cavity-mode emission}, Phys. Rev. A \textbf{97}, 043815 (2018).
+    \bibitem{ModePulling} S. Echeverri-Arteaga, H Vinck-Posada, E. A. Gómez, \textit{The strange attraction phenomenon in cQED: the intermediate quantum coupling regime}, Optik \textbf{183}, 389 (2019).
+    \bibitem{VillasBoas} S Echeverri-Arteaga, H Vinck-Posada, JM Villas-Bôas, E. A. Gómez \textit{Pure dephasing vs. Phonon mediated off-resonant coupling in a quantum-dot-cavity system}, Opt. Comm. \textbf{460}, 125115 (2020).
+    \bibitem{Biexciton} J. J. Vanegas-Giraldo, H. Vinck-Posada, S. Echeverri-Arteaga, E. A. Gómez \textit{The strange attraction phenomenon induced by phonon-mediated off-resonant coupling in a biexciton-cavity system}, Phys. Let. A \textbf{384}, 126481 (2020).
+%%%%
+%%%%
+%%%% REFERENCIAS SOLO PARA LA RESPUESTA A LOS REFEREES
+%%%%
+%%%%
+\bibitem{Blakemore:1982} J.S.Blakemore,  \textit{Semiconducting and other major properties of gallium arsenide}, J. Appl. Phys. \textbf{53} R123–R181 (1982).
+\bibitem{Varshni:1967} Y.P.Varshni, \textit{Temperature dependence of the energy gap in semiconductors}, Physica \textbf{34} 149–154 (1967).
+\bibitem{Vurgaftman:2001} I.Vurgaftman,J.R.Meyer,L.R.Ram-Mohan, \textit{Band parameters for III-V compound semiconductors and their alloys}, J. Appl. Phys. \textbf{89}  5815–5875 (2001).
+\bibitem{Perea:2004} J.I. Perea, D. Porras, C. Tejedor, \textit{Dynamics of the excitations of a quantum dot
+in a microcavity} Phys. Rev. B. \textbf{70} 115304 (2004).
+\bibitem{Majumdar} A. Majumdar, E. D. Kim, Y. Gong, M. Bajcsy, and
+J. Vuckovic, \textit{Phonon mediated off-resonant quantum dot–cavity coupling under resonant excitation of the quantum dot} Phys. Rev. B \textbf{84}, 085309 (2011).
+\end{thebibliography}
+\end{itemize}
+ }
+\end{enumerate}
+%
+\begin{table}[ht]\centering\renewcommand{\arraystretch}{1.3}\begin{tabular}{|c|p{4cm}|p{3.2cm}|p{3.2cm}|p{2cm}|}\hline\textbf{Symbol} & \textbf{Physical meaning / name} & \textbf{Associated operator / object} & \textbf{Role in equation} & \textbf{Units / dimension} \\\hline$a$, $a^\dagger$ & Annihilation / creation operator of cavity mode A & Bosonic operator & Appears in $\omega_a a^\dagger a$, coupling, and Lindblad terms & Dimensionless operator \\\hline$b$, $b^\dagger$ & Annihilation / creation operator of cavity mode B & Bosonic operator & Appears in $\omega_b b^\dagger b$, coupling, and Lindblad terms & Dimensionless operator \\\hline$\sigma$, $\sigma^\dagger$ & Lowering / raising operators of the two-level system (emitter) & Spin-$1/2$ ladder operator & Appears in $\omega_\sigma \sigma^\dagger\sigma$, Jaynes--Cummings coupling, and dissipators & Dimensionless operator \\\hline$\omega_a$ & Resonance frequency (energy) of cavity A & Mode A & Free Hamiltonian term & Frequency or energy \\\hline$\omega_b$ & Resonance frequency (energy) of cavity B & Mode B & Free Hamiltonian term & Frequency or energy \\\hline$\omega_\sigma$ & Transition frequency (energy) of the emitter & TLS & Free Hamiltonian term & Frequency or energy \\\hline$g$ & Intercavity coherent coupling rate & $a^\dagger b + b^\dagger a$ & Coherent photon hopping between cavities A and B & Frequency (rate) \\\hline$g_\sigma$ & Emitter--cavity coherent coupling rate & $a^\dagger\sigma + \sigma^\dagger a$ & Jaynes--Cummings coupling between emitter and cavity A & Frequency (rate) \\\hline$\gamma_a$ & Photon loss rate of cavity A & $\mathcal{L}_a$ & Lindblad decay of mode A & s$^{-1}$ \\\hline$\gamma_b$ & Photon loss rate of cavity B & $\mathcal{L}_b$ & Lindblad decay of mode B & s$^{-1}$ \\\hline$\gamma_\sigma$ & Spontaneous emission rate of emitter & $\mathcal{L}_\sigma$ & TLS relaxation to ground state & s$^{-1}$ \\\hline$P_\sigma$ & Incoherent pumping rate of emitter & $\mathcal{L}_{\sigma^\dagger}$ & Excites the TLS incoherently & s$^{-1}$ \\\hline$P_\theta$ & Phonon-assisted pumping / correlated excitation & $\mathcal{L}_{\sigma a^\dagger}$ & Creates cavity photon while exciting TLS (phonon-assisted) & s$^{-1}$ \\\hline$\gamma_\theta$ & Phonon-assisted correlated decay rate & $\mathcal{L}_{\sigma^\dagger a}$ & Correlated emitter--cavity decay (phonon-assisted relaxation) & s$^{-1}$ \\\hline$\mathcal{L}_c$ & Lindblad superoperator for jump operator $c$ & $\mathcal{L}_c \rho$ & Dissipative dynamics, defined as $c^\dagger c \rho + \rho c^\dagger c - 2 c \rho c^\dagger$ & Operator on $\rho$ \\\hline$\rho$ & Density matrix of total system & --- & Dynamical state variable & Dimensionless operator \\\hline\end{tabular}\caption{List of parameters, operators, and rates appearing in the Hamiltonian and master equation.}\end{table}
+%
+\end{document}
